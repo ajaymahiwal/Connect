@@ -190,9 +190,9 @@ module.exports.showFollowings = async(req,res,next)=>{
     let userID = req.params.id;
 
     let userProfile = await User.findById(userID).populate('followings');
-    let listings = await Listing.find({ owner: userID });
-    let postLength = listings.length;
-    res.render("./user/userFollowings.ejs",{userProfile,postLength});
+    // let listings = await Listing.find({ owner: userID });
+    // let postLength = listings.length;
+    res.render("./user/userFollowings.ejs",{userProfile});
 }
 
 module.exports.showAllUsers = async(req,res,next)=>{
